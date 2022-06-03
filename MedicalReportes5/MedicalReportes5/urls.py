@@ -47,3 +47,7 @@ urlpatterns = [
 if settings.DEBUG:
     urlpatterns +=  static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)
 
+# Añadir
+admin.site.site_header = 'Administracion Medical Report'
+admin.site.site_title = "Portal de Medical Report"
+admin.site.index_title = "Bienvenidos al portal de administración Medical Report"

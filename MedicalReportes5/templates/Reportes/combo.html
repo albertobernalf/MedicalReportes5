@@ -76,6 +76,21 @@
 
     <div class="col-xl-2" style="width:50px;height:10px;">
 
+                {% if subGrupos.nombreSubGrupo == 'HOSPITALIZACION' %}
+
+        <figure class="figure">
+
+            <img src="{% static '/img/HOSPITALIZACION.jpg' %}" class="figure-img img-fluid rounded"
+                 style="width:200px;height:100px;"
+                 alt="...">
+            <figcaption class="figure-caption text-right">
+                <a href="/combo/{{Username}}, {{SedeSeleccionada}}, {{Grupo}}, {{subGrupos.id}}  ">
+                    {{subGrupos.nombreSubGrupo}} </a>
+            </figcaption>
+        </figure>
+        {% endif %}
+
+
         {% if subGrupos.nombreSubGrupo == 'CIRUGIA' %}
 
         <figure class="figure">
@@ -172,6 +187,35 @@
             </figcaption>
         </figure>
         {% endif %}
+
+            {% if subGrupos.nombreSubGrupo == 'ESTADISTICAS' %}
+
+        <figure class="figure">
+
+            <img src="{% static '/img/Estadisticas.jpg' %}" class="figure-img img-fluid rounded"
+                 style="width:200px;height:100px;"
+                 alt="...">
+            <figcaption class="figure-caption text-right">
+                <a href="/combo/{{Username}}, {{SedeSeleccionada}}, {{Grupo}}, {{subGrupos.id}}  ">
+                    {{subGrupos.nombreSubGrupo}} </a>
+            </figcaption>
+        </figure>
+        {% endif %}
+
+          {% if subGrupos.nombreSubGrupo == 'CALIDAD' %}
+
+        <figure class="figure">
+
+            <img src="{% static '/img/Calidad.jpg' %}" class="figure-img img-fluid rounded"
+                 style="width:200px;height:100px;"
+                 alt="...">
+            <figcaption class="figure-caption text-right">
+                <a href="/combo/{{Username}}, {{SedeSeleccionada}}, {{Grupo}}, {{subGrupos.id}}  ">
+                    {{subGrupos.nombreSubGrupo}} </a>
+            </figcaption>
+        </figure>
+        {% endif %}
+
 
     </div>
 

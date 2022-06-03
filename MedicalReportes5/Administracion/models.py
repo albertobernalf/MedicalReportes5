@@ -57,6 +57,9 @@ class Mae_SubGrupoReportes(models.Model):
     nom_subgrupo = models.CharField(max_length=120, unique=True)
     estadoreg = models.CharField(max_length=1, default='A', editable=True ,choices=TIPO_CHOICES,)
 
+    class Meta:
+        unique_together = ("mae_gruporeportes","nom_subgrupo")
+
     def __str__(self):
         return self.nom_subgrupo
 
@@ -96,6 +99,10 @@ class Mae_RepParametros(models.Model):
    # parametro_valor = models.CharField(max_length=30, editable=True)
     estadoreg = models.CharField(max_length=1, default='A', editable=True ,choices=TIPO_CHOICES,)
 
+    class Meta:
+        unique_together = ("mae_reportes", "parametro")
+
+
     def __str__(self):
         return self.parametro_texto
 
@@ -134,6 +141,8 @@ class Imhotep_SedesReportes(models.Model):
     sede = models.CharField(max_length=120, default='')
     estadoreg = models.CharField(max_length=1, default='A', editable=True, choices=TIPO_CHOICES, )
 
+    class Meta:
+        unique_together = ("codreg_sede", "nom_sede")
 
     def __str__(self):
         return self.nom_sede

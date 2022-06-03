@@ -11,10 +11,10 @@ from Administracion.forms import Mae_ReportesForm
 #@admin.register(Mae_ReportesAdmin)
 class mae_ReportesAdmin(admin.ModelAdmin):
 
-    list_display  = ("id","mae_gruporeportes","nom_reporte","usuario_crea","fechaRegistro","descripcion","cuerpo_sql", "encabezados","excel","pdf","csv", "grilla","estadoreg")
-    search_fields = ("id","mae_gruporeportes","nom_reporte","usuario_crea","fechaRegistro","descripcion","cuerpo_sql", "encabezados", "excel","pdf","csv", "grilla","estadoreg")
+    list_display  = ("id","mae_gruporeportes","mae_subgruporeportes","nom_reporte","usuario_crea","fechaRegistro","descripcion","cuerpo_sql", "encabezados","excel","pdf","csv", "grilla","estadoreg")
+    search_fields = ("id","mae_gruporeportes__id","mae_subgruporeportes__id","nom_reporte","usuario_crea","fechaRegistro","descripcion","cuerpo_sql", "encabezados", "excel","pdf","csv", "grilla","estadoreg")
     # Filtrar
-    list_filter = ("mae_gruporeportes","nom_reporte","usuario_crea","fechaRegistro","descripcion", "excel","pdf","csv","grilla", "estadoreg")
+    list_filter = ("mae_gruporeportes","mae_subgruporeportes","nom_reporte","usuario_crea","fechaRegistro","descripcion", "excel","pdf","csv","grilla", "estadoreg")
 
     form = Mae_ReportesForm
 
@@ -37,7 +37,7 @@ class mae_SubGrupoReportesAdmin(admin.ModelAdmin):
 
 class mae_RepUsuariosAdmin(admin.ModelAdmin):
     list_display = ("cod_sede","mae_reportes", "cod_usuario", "estadoreg")
-    search_fields = ("cod_sede","mae_reporte", "cod_usuario", "estadoreg")
+    search_fields = ("cod_sede__id","mae_reporte__id", "cod_usuario", "estadoreg")
     # Filtrar
 
 
